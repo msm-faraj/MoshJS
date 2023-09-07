@@ -1,12 +1,7 @@
-// function includes(array, searchElement) {
-//   for (let i = 0; i < array.length; i++)
-//     if (array[i] === searchElement) return true;
-//   return false;
-// }
-
-function includes(array, searchElement) {
-  for (let num of array) if (num === searchElement) return true;
-  return false;
+function except(array, excluded) {
+  const output = [];
+  for (let num of array) if (!excluded.includes(num)) output.push(num);
+  return output;
 }
 
-console.log(includes([1, 3, 5, 7, 9, 11, 13], 10));
+console.log(except([1, 2, 3, 1], [1, 2]));
